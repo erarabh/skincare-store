@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";								 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +29,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+		 {/* ✅ Embed Serine chatbot globally */}
+        <Script
+          src="https://serine.vercel.app/embed.js"
+          data-user-id="c3fcd9ae-c943-47ff-9b10-ad37006de704"
+          strategy="afterInteractive"
+        />								 
       </body>
     </html>
   );
